@@ -46,7 +46,7 @@ palindromo :: (Eq a) => [a] -> Bool
 
 ##### que verifica se uma string (ou lista) é palíndroma, utilizando a função reverse.
 
-
+###### Resposta
 
 ##### 5. Mostre que a seguinte função curried pode ser formalizada em termos de expressões lambda:
 ```haskell
