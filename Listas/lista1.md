@@ -115,6 +115,23 @@ mult x y z = x*y*z
 mult :: Int -> (Int -> (Int -> Int))
 mult = \x y z -> x*y*z
 ```
+Isto funciona já que a função `mult` vai retornar uma função somente caso for enviado valores intermediários. Quando não existir argumentos necessários, o cálculo final será retornado.
+
+```haskell
+let mult = \x y z -> x*y*z
+
+let a = mult 3
+-- a = \y z -> 3*y*z
+-- Substituiu o primeiro argumento da função anônima pelo
+-- valor passado e retorna uma função já com este valor
+-- substituido esperando pelos outros.
+
+let b = a 2
+-- b = \z -> 3*2*z
+
+let c = b 4
+-- c = 3*2*4 = 24
+```
 
 ***
 
