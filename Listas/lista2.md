@@ -1,4 +1,4 @@
-# Resolução Lista 1
+# Resolução Lista 2
 ### Arthur Henrique Fernandes e [Gabriel Trettel](https://github.com/GabrielTrettel/)
 
 
