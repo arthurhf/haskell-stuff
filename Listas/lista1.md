@@ -1,19 +1,20 @@
 # Resolução Lista 1
-### Arthur Henrique Fernandes e Gabriel Trettel
+### Arthur Henrique Fernandes e [Gabriel Trettel](https://github.com/GabrielTrettel/)
 
 ##### 1. Coloque parênteses nas seguintes expressões:
 
 ``` haskell
-2^3*4
+(2^3)*4
 
 2*3+4*5
 
 2+3*4^5
 
-2+3/4-5^6*7 ```
+2+3/4-5^6*7
+```
 ###### Resposta
 
-##### 2. Sem utilizar qualquer ajuda, determine o valor e o tipo retornado poressas expressões. Em seguida, utilize oghcipara confirmar a resposta:
+##### 2. Sem utilizar qualquer ajuda, determine o valor e o tipo retornado por essas expressões. Em seguida, utilize o ghci para confirmar a resposta:
 ``` haskell
 (*9)6
 
@@ -25,21 +26,38 @@ if False then True else False
 
 length [1,2,3,4,5]
 
-length [1,2,3,4] > length "TACOCAT" ```
+length [1,2,3,4] > length "TACOCAT"
+```
 
 ###### Resposta
 
 ##### 3. Defina uma função para seguinte assinatura:
 ``` haskell
-f :: (a, b) -> (c, d) -> ((b, d), (a, c)) ```
+f :: (a, b) -> (c, d) -> ((b, d), (a, c))
+```
 
 ###### Resposta
 
 ##### 4. Defina uma função
 ``` haskell
-palindromo :: (Eq a) => [a] -> Bool ```
-
+palindromo :: (Eq a) => [a] -> Bool
+```
 ##### que verifica se uma string (ou lista) é palíndroma, utilizando a função reverse.
+###### Resposta
+Uma versão mais simples que não leva em conta se o caractere é maiúsculo ou não
+```haskell  
+palindrome :: [a] -> Bool
+palindrome [] = False
+palindrome p = p == (reverse p)
+```
+Uma versão um pouco mais robusta:
+```haskell
+import Data.Char
+
+palindrome :: String -> Bool
+palindrome "" = False
+palindrome p = and [(toLower c1) == (toLower c2) | (c1,c2) <- (zip p (reverse p))]
+```
 
 
 
@@ -50,9 +68,15 @@ mult x y z = x*y*z
 ```
 ###### Resposta
 
-##### 6. Mostre como o operador || pode ser definido de quatro modos diferentes usando pattern matching.
 
+##### 6. Mostre como o operador || pode ser definido de quatro modos diferentes usando pattern matching.
 ###### Resposta
+```haskell
+(||) :: Bool -> Bool -> Bool
+(||) True _ = True
+(||) _ True = True
+(||) False False = False
+```
 
 
 ##### 7. Sem usar outras bibliotecas, funções ou operadores, mostre que a definição por pattern matching de &&
@@ -60,7 +84,13 @@ mult x y z = x*y*z
 True && True = True
 _ && _ = False
 ```
-pode ser formalizada utilizando duas expressões condicionais (if) aninhadas.
+##### pode ser formalizada utilizando duas expressões condicionais (if) aninhadas.
+```haskell
+(&&) :: Bool -> Bool -> Bool
+(&&) a b = if a then (if b then True else False) else False
+```
+
+
 ###### Resposta
 
 
@@ -69,8 +99,14 @@ pode ser formalizada utilizando duas expressões condicionais (if) aninhadas.
 True && b = b
 False && _ = False
 ```
-usando dessa vez uma única expressão condicional.
+##### usando dessa vez uma única expressão condicional.
+
 ###### Resposta
+```haskell
+(&&) :: Bool -> Bool -> Bool
+(&&) a b = if a then b else False
+```
+
 
 
 ##### 9. Defina a única função possível para a assinatura
@@ -78,11 +114,14 @@ usando dessa vez uma única expressão condicional.
 c :: a -> b -> a
 ```
 ###### Resposta
+```haskell
+c :: a -> b -> a
+c a b = a
+```
 
 
 ##### 10. Defina a única função possível para a assinatura
 ```haskell
 co :: (b -> c) -> (a -> b) -> a -> c
 ```
->>>>>>> 2d04dccaefd16dbb11d11b6f02d99140269f8f7b
 ###### Resposta
