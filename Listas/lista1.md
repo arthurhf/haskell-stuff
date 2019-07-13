@@ -15,7 +15,18 @@
 
 ###### Resposta
 
-##### 2. Sem utilizar qualquer ajuda, determine o valor e o tipo retornado poressas expressões. Em seguida, utilize oghcipara confirmar a resposta:
+``` haskell
+(2^3)*4
+
+(2*3)+(4*5)
+
+2+(3*(4^5))
+
+2+(3/4)-((5^6)*7)
+```
+
+##### 2. Sem utilizar qualquer ajuda, determine o valor e o tipo retornado por essas expressões. Em seguida, utilize o *ghci* para confirmar a resposta:
+
 ``` haskell
 (*9)6
 
@@ -32,12 +43,31 @@ length [1,2,3,4] > length "TACOCAT"
 
 ###### Resposta
 
+``` haskell
+(*9)6 = 54, tipo Num (Int)
+
+head [(0,"doge"),(1,"kitteh")] = (0, "dodge"), tipo Tuple (Num, [Char])
+
+head [(0::Integer,"doge"),(1,"kitteh")] = (0,"doge"), tipo Tuple (Integer, [Char])
+
+if False then True else False = False, tipo Bool
+
+length [1,2,3,4,5] = 5, tipo Int
+
+length [1,2,3,4] > length "TACOCAT" = False, tipo Bool
+```
+
 ##### 3. Defina uma função para seguinte assinatura:
 ``` haskell
 f :: (a, b) -> (c, d) -> ((b, d), (a, c))
 ```
 
 ###### Resposta
+
+``` haskell
+f :: (a, b) -> (c, d) -> ((b, d), (a, c))
+f (a,b) (c, d) = ((b, d), (a, c))
+```
 
 ##### 4. Defina uma função
 ``` haskell
@@ -89,5 +119,9 @@ c :: a -> b -> a
 ```haskell
 co :: (b -> c) -> (a -> b) -> a -> c
 ```
->>>>>>> 2d04dccaefd16dbb11d11b6f02d99140269f8f7b
+
 ###### Resposta
+```haskell
+co :: (b -> c) -> (a -> b) -> a -> c
+co f g n = f (g n)
+```
