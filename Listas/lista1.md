@@ -15,7 +15,6 @@
 
 ###### Resposta
 
-<<<<<<< HEAD
 ``` haskell
 (2^3)*4
 
@@ -26,14 +25,11 @@
 2+(3/4)-((5^6)*7)
 ```
 
-##### 2. Sem utilizar qualquer ajuda, determine o valor e o tipo retornado por essas expressões. Em seguida, utilize o *ghci* para confirmar a resposta:
 
-=======
 ***
 
 
-##### 2. Sem utilizar qualquer ajuda, determine o valor e o tipo retornado por essas expressões. Em seguida, utilize o ghci para confirmar a resposta:
->>>>>>> ea7fd7600121d1244df24e10af066fcd1e958eae
+##### 2. Sem utilizar qualquer ajuda, determine o valor e o tipo retornado por essas expressões. Em seguida, utilize o *ghci* para confirmar a resposta:
 ``` haskell
 (*9)6
 
@@ -50,7 +46,6 @@ length [1,2,3,4] > length "TACOCAT"
 
 ###### Resposta
 
-<<<<<<< HEAD
 ``` haskell
 (*9)6 = 54, tipo Num (Int)
 
@@ -64,9 +59,10 @@ length [1,2,3,4,5] = 5, tipo Int
 
 length [1,2,3,4] > length "TACOCAT" = False, tipo Bool
 ```
-=======
+
+
 ***
->>>>>>> ea7fd7600121d1244df24e10af066fcd1e958eae
+
 
 ##### 3. Defina uma função para seguinte assinatura:
 ``` haskell
@@ -75,22 +71,19 @@ f :: (a, b) -> (c, d) -> ((b, d), (a, c))
 
 ###### Resposta
 
-<<<<<<< HEAD
 ``` haskell
 f :: (a, b) -> (c, d) -> ((b, d), (a, c))
 f (a,b) (c, d) = ((b, d), (a, c))
 ```
-=======
+
 
 ***
->>>>>>> ea7fd7600121d1244df24e10af066fcd1e958eae
+
 
 ##### 4. Defina uma função
 ``` haskell
 palindromo :: (Eq a) => [a] -> Bool
 ```
-
-
 ##### que verifica se uma string (ou lista) é palíndroma, utilizando a função reverse.
 ###### Resposta
 Uma versão mais simples que não leva em conta se o caractere é maiúsculo ou não
@@ -107,7 +100,10 @@ palindrome :: String -> Bool
 palindrome "" = False
 palindrome p = and [(toLower c1) == (toLower c2) | (c1,c2) <- (zip p (reverse p))]
 ```
+
+
 ***
+
 
 ##### 5. Mostre que a seguinte função curried pode ser formalizada em termos de expressões lambda:
 ```haskell
@@ -116,7 +112,9 @@ mult x y z = x*y*z
 ```
 ###### Resposta
 
+
 ***
+
 
 ##### 6. Mostre como o operador || pode ser definido de quatro modos diferentes usando pattern matching.
 ###### Resposta
@@ -126,7 +124,10 @@ mult x y z = x*y*z
 (||) _ True = True
 (||) False False = False
 ```
+
+
 ***
+
 
 ##### 7. Sem usar outras bibliotecas, funções ou operadores, mostre que a definição por pattern matching de &&
 ```haskell
@@ -139,6 +140,7 @@ _ && _ = False
 (&&) :: Bool -> Bool -> Bool
 (&&) a b = if a then (if b then True else False) else False
 ```
+
 
 ***
 
@@ -170,16 +172,14 @@ c :: a -> b -> a
 c a b = a
 ```
 
+
 ***
+
 
 ##### 10. Defina a única função possível para a assinatura
 ```haskell
 co :: (b -> c) -> (a -> b) -> a -> c
 ```
-<<<<<<< HEAD
-
-=======
->>>>>>> ea7fd7600121d1244df24e10af066fcd1e958eae
 ###### Resposta
 ```haskell
 co :: (b -> c) -> (a -> b) -> a -> c
