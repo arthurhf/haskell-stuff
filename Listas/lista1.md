@@ -10,7 +10,9 @@
 
 2+3*4^5
 
-2+3/4-5^6*7 ```
+2+3/4-5^6*7
+```
+
 ###### Resposta
 
 ##### 2. Sem utilizar qualquer ajuda, determine o valor e o tipo retornado poressas expressões. Em seguida, utilize oghcipara confirmar a resposta:
@@ -25,19 +27,22 @@ if False then True else False
 
 length [1,2,3,4,5]
 
-length [1,2,3,4] > length "TACOCAT" ```
+length [1,2,3,4] > length "TACOCAT"
+```
 
 ###### Resposta
 
 ##### 3. Defina uma função para seguinte assinatura:
 ``` haskell
-f :: (a, b) -> (c, d) -> ((b, d), (a, c)) ```
+f :: (a, b) -> (c, d) -> ((b, d), (a, c))
+```
 
 ###### Resposta
 
 ##### 4. Defina uma função
 ``` haskell
-palindromo :: (Eq a) => [a] -> Bool ```
+palindromo :: (Eq a) => [a] -> Bool
+```
 
 ##### que verifica se uma string (ou lista) é palíndroma, utilizando a função reverse.
 
