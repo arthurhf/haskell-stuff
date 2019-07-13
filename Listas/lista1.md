@@ -111,7 +111,10 @@ mult :: Int -> Int -> Int -> Int
 mult x y z = x*y*z
 ```
 ###### Resposta
-
+```haskell
+mult :: Int -> (Int -> (Int -> Int))
+mult = \x y z -> x*y*z
+```
 
 ***
 
