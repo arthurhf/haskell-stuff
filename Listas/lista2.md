@@ -163,10 +163,10 @@ somaDigitos :: [Int] -> Int
 ###### Resposta
 ```haskell
 somaDigitos :: [Int] -> Int
-somaDigitos xs = foldr (+) 0 xs
+somaDigitos xs = foldr (+) 0 new_xs
     where
-        big_num = map digitosRev $ filter (\n -> n > 9) xs
-
+        broken_big_num = concat $ map digitosRev $ filter (\n -> n > 9) xs
+        new_xs = broken_big_num ++ filter (\n -> n <= 9) xs
 ```
 
 ##### (d) Utilize as funções criadas anteriormente para definir a função
