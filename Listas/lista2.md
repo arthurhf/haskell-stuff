@@ -64,6 +64,10 @@ produtoEscalar :: Num a => [a] -> [a] -> a
 
 ```haskell
 produtoEscalar :: Num a => [a] -> [a] -> a
+produtoEscalar a b = foldr (+) 0 mulab
+    where
+        zipab = zip a b
+        mulab = [a * b | (a, b) <- zipab]
 ```
 ***
 ##### 5. Escreva uma função recursiva
@@ -129,6 +133,13 @@ digitosRev :: Int -> [Int]
 
 ##### que converte um inteiro em uma lista contendo seus dígitos na ordem reversa.
 
+###### Resposta
+```haskell
+digitosRev :: Int -> [Int]
+digitosRev 0 = []
+digitosRev num = [num `mod` 10] ++ digitosRev (num `div` 10)
+```
+
 ##### (b) Escreva a função
 
 ```haskell
@@ -137,12 +148,26 @@ dobroAlternado :: [Int] -> [Int]
 
 ##### que recebe uma lista de números e dobra a partir da esquerda o segundo, quarto etc, elemento, devolvendo uma lista atualizada. Note que por termos escrito a função anterior para retornar os dígitos invertidos, podemos fazer essa operação da esquerda ao invés de da direita conforme descrição do algoritmo. Por exemplo,para [3,5,6,4] a a saída é [3,10,6,8].
 
+###### Resposta
+```haskell
+dobroAlternado :: [Int] -> [Int]
+```
+
 ##### (c) Defina a função
 ```haskell
 somaDigitos :: [Int] -> Int
 ```
 
 ##### que soma todos os dígitos da lista de inteiros. Com o uso função anterior, alguns números possuem dois dígitos, que precisam ser somados individualmente. Exemplo: [6,5,12,4] = 6 + 5 + 1 + 2 + 4 = 18
+
+###### Resposta
+```haskell
+somaDigitos :: [Int] -> Int
+somaDigitos xs = foldr (+) 0 xs
+    where
+        big_num = map digitosRev $ filter (\n -> n > 9) xs
+
+```
 
 ##### (d) Utilize as funções criadas anteriormente para definir a função
 ```haskell
