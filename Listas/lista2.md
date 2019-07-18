@@ -151,9 +151,9 @@ dobroAlternado :: [Int] -> [Int]
 ###### Resposta
 ```haskell
 dobroAlternado :: [Int] -> [Int]
-dobroAlternado xs = [ddd i e | (i, e) <- zip [1..] xs]]
+dobroAlternado xs = [double_par i e | (i, e) <- zip [1..] xs]
     where
-        ddd index e = if (index)`rem`2 == 0 then 2*e else e
+        double_par index e = if (index)`rem`2 == 0 then 2*e else e
 ```
 
 ##### (c) Defina a função
@@ -187,4 +187,14 @@ False
 True
 >luhn 4012888888881882
 False
+```
+
+###### Resposta
+```haskell
+luhn :: Int -> Bool
+luhn n
+    | total `rem` 10 == 0 = True
+    | otherwise = False
+    where
+        total = somaDigitos $ dobroAlternado $ digitosRev n
 ```
