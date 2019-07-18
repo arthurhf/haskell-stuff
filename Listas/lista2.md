@@ -151,6 +151,9 @@ dobroAlternado :: [Int] -> [Int]
 ###### Resposta
 ```haskell
 dobroAlternado :: [Int] -> [Int]
+dobroAlternado xs = [ddd i e | (i, e) <- zip [1..] xs]]
+    where
+        ddd index e = if (index)`rem`2 == 0 then 2*e else e
 ```
 
 ##### (c) Defina a função
