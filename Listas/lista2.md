@@ -44,7 +44,7 @@ perfeitos :: Int -> [Int]
 ##### que recebe um inteiro n e retorna uma lista dos números perfeitos atén. Um número perfeito é igual à soma de seus fatores, excluindo a si mesmo. O número 28 é perfeito, pois 1 + 2 + 4 + 7 + 14 = 28. Exemplo:
 
 ```haskell
-perfeitos500
+perfeitos 500
 [6,28,496]
 ```
 ###### Resposta
@@ -78,6 +78,12 @@ palindromo :: [Int] -> Bool
 
 ```haskell
 palindromo :: [Int] -> Bool
+palindromo [] = True
+palindromo [e] = True
+palindromo (x:xs)
+    | x == y = palindromo $ init xs
+    | otherwise = False
+    where (y:ys) = reverse (x:xs)
 ```
 ***
 ##### 6. Defina uma função
