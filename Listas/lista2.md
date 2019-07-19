@@ -32,7 +32,10 @@ maximoLocal :: [Int] -> [Int]
 ###### Resposta
 
 ```haskell
+--Aqui o patern match é invertido: só queremos que a recursão ocorra enquanto a lista tiver, no mínimo, 3 elementos + um resto (representado pelo xs)
 maximoLocal :: [Int] -> [Int]
+maximoLocal (x0:x1:x2:xs) = if (x1 > x0 && x1 > x2) then x1:maximoLocal(x1:x2:xs) else maximoLocal (x1:x2:xs)
+maximoLocal _ = []
 ```
 ***
 ##### 3. Usando compreensão de listas, defina a função
