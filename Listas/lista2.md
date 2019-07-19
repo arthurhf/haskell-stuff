@@ -1,5 +1,5 @@
 # Resolução Lista 2
-### Arthur Henrique Fernandes e [Gabriel Trettel](https://github.com/GabrielTrettel/)
+### Arthur Henrique Fernandes, [Gabriel Trettel](https://github.com/GabrielTrettel/) e [Eric Stein](https://github.com/GrayJack/)
 
 
 ##### 1. Defina uma função
@@ -102,6 +102,7 @@ ordenaListas :: (Num a, Ord a) => [[a]] -> [[a]]
 
 ```haskell
 ordenaListas :: (Num a, Ord a) => [[a]] -> [[a]]
+ordenaListas xs = sortOn (length) xs
 ```
 ***
 ##### 7. Mostre como a compreensão de lista
