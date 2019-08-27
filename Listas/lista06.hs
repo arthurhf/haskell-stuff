@@ -2,6 +2,14 @@
 --definir o Functor para o tipo abaixo:
 data Tree a = Leaf | Node  (Tree a) a (Tree a) deriving Show
 
+instance Functor Tree where
+  fmap :: (a -> b) -> Tree a -> Tree b
+  -- folha -> retornamos folha novamente
+  fmap _ Leaf = Leaf
+  -- nó -> retornamos um outro nó com f aplicada nos ramos da esquerda
+  -- e da direita, e no elemento central
+  fmap f (Node l c r) = Node (fmap f l) (f c) (fmap f r)
+
 --ex2
 
 newtype ZipList a = Z [a] deriving Show
