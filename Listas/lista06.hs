@@ -16,11 +16,16 @@ newtype ZipList a = Z [a] deriving Show
 
 instance Functor ZipList where
     fmap :: (a -> b) -> ZipList a -> ZipList b
-    fmap g (Z xs) = undefined
+    fmap g (Z xs) = Z $ map g xs
 
+-- Dica: https://en.wikibooks.org/wiki/Haskell/Applicative_functors
+-- dá pra entender muito mais fácil
 instance Applicative ZipList where
     pure :: a -> ZipList a
-    pure x = Z x -- ?
+    pure x = Z $ repeat x
+
+    (<*>) :: Z (a -> b) -> Z a -> Z b
+    as <*> bs = zipWith ($) as bs
 
 --ex3
 data Expr a = Var a | Val Int | Add (Expr a) (Expr a) deriving Show
